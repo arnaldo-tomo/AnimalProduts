@@ -10,6 +10,7 @@ export const user = {
     profile: require('../assets/imgs/Main.png'),
 };
 
+export const mpesalogo = require('../assets/imgs/mpesalogo.png');
 export const imagOneboard = require('../assets/imgs/image1.png');
 export const IconHome = require('../assets/icon/ic_round-dashboard.png');
 export const IconGroup = require('../assets/icon/Group.png');
