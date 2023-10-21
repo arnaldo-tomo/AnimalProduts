@@ -42,7 +42,8 @@ export const Home = ({ navigation }) => {
                     {produts.map((data) =>
                         <TouchableOpacity key={data.id} onPress={() => navigation.navigate('Product', data)}>
                             <View style={{ marginLeft: SPACING * 4 }}>
-                                <View style={[{ width: 175, height: 270, backgroundColor: GRAY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
+                                <View style={
+                                    [{ width: 175, height: 270, backgroundColor: GRAY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
                                     data.id == 0 && { width: 175, height: 270, backgroundColor: AZUL, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
                                     data.id == 1 && { width: 175, height: 270, backgroundColor: ROSA, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
                                     data.id == 2 && { width: 175, height: 270, backgroundColor: PRIMARY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
