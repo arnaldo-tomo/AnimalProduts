@@ -1,6 +1,6 @@
 import { Text } from "react-native"
 import { View } from "react-native"
-import { AZUL, GRAY, IconGroup, LIGHT, PRIMARY, ROSA, SPACING, user } from "../../configs"
+import { AZUL, GRAY, IconGroup, LIGHT, PRIMARY, ROSA, SPACING, VERDE, user } from "../../configs"
 import { SafeAreaView } from "react-native"
 import { StatusBar } from 'expo-status-bar';
 import { Image } from "react-native";
@@ -10,7 +10,7 @@ import { AnimalCategory, OthersProduts, produts } from "../../data";
 import { ScrollView } from "react-native";
 import { useState } from "react";
 const { width, height } = Dimensions.get('screen');
-export const Home = () => {
+export const Home = ({ navigation }) => {
 
 
     const [activeCategria, setActiveCategria] = useState(1)
@@ -30,7 +30,7 @@ export const Home = () => {
 
                 <View style={{ flexDirection: 'row', marginLeft: SPACING * 5, paddingTop: SPACING * 7 }}>
                     {AnimalCategory.map((data) =>
-                        <ScrollView horizontal>
+                        <ScrollView key={data.id} horizontal>
                             <TouchableOpacity key={data.id} onPress={() => setActiveCategria(data.id)} >
                                 <Text key={data.id} style={[{ color: GRAY, fontWeight: 'bold' }, activeCategria == data.id && { color: PRIMARY, fontWeight: '800' }]}>{data.name}</Text>
                                 <Text style={[activeCategria == data.id && { backgroundColor: ROSA, height: 4, borderRadius: SPACING, paddingTop: SPACING }]}></Text>
@@ -40,26 +40,28 @@ export const Home = () => {
                 </View>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: SPACING * 4 }}>
                     {produts.map((data) =>
-                        <View style={{ marginLeft: SPACING * 4 }}>
-                            <View style={[{ width: 175, height: 270, backgroundColor: GRAY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
-                            data.id == 0 && { width: 175, height: 270, backgroundColor: AZUL, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
-                            data.id == 1 && { width: 175, height: 270, backgroundColor: ROSA, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
-                            data.id == 2 && { width: 175, height: 270, backgroundColor: PRIMARY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
+                        <TouchableOpacity key={data.id} onPress={() => navigation.navigate('Product', data)}>
+                            <View style={{ marginLeft: SPACING * 4 }}>
+                                <View style={[{ width: 175, height: 270, backgroundColor: GRAY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
+                                    data.id == 0 && { width: 175, height: 270, backgroundColor: AZUL, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
+                                    data.id == 1 && { width: 175, height: 270, backgroundColor: ROSA, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
+                                    data.id == 2 && { width: 175, height: 270, backgroundColor: PRIMARY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
 
-                            ]}>
-                                <Image source={data.Image} style={{ width: 150, height: 150 }} />
-                                <Text style={[{ color: PRIMARY, fontWeight: '800', },
-                                data.id == 0 && { color: ROSA, fontWeight: '800', },
-                                data.id == 2 && { color: LIGHT, fontWeight: '800', },
-                                data.id == 3 && { color: LIGHT, fontWeight: '800', },
-                                ]}> {data.name}</Text>
-                                <Text style={[{ color: PRIMARY, fontWeight: '800', },
-                                data.id == 0 && { color: ROSA, fontWeight: '800', },
-                                data.id == 2 && { color: LIGHT, fontWeight: '800', },
-                                data.id == 3 && { color: LIGHT, fontWeight: '800', },
-                                ]}> {data.price}.00MZN</Text>
+                                ]}>
+                                    <Image source={data.Image} style={{ width: 150, height: 150 }} />
+                                    <Text style={[{ color: PRIMARY, fontWeight: '800', },
+                                    data.id == 0 && { color: ROSA, fontWeight: '800', },
+                                    data.id == 2 && { color: LIGHT, fontWeight: '800', },
+                                    data.id == 3 && { color: LIGHT, fontWeight: '800', },
+                                    ]}> {data.name}</Text>
+                                    <Text style={[{ color: PRIMARY, fontWeight: '800', },
+                                    data.id == 0 && { color: ROSA, fontWeight: '800', },
+                                    data.id == 2 && { color: LIGHT, fontWeight: '800', },
+                                    data.id == 3 && { color: LIGHT, fontWeight: '800', },
+                                    ]}> {data.price}.00MZN</Text>
+                                </View>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     )}
                 </ScrollView>
 
@@ -67,17 +69,22 @@ export const Home = () => {
                     <Text style={{ color: PRIMARY, fontSize: 20, fontWeight: 'bold', marginLeft: SPACING * 2 }}>Other products</Text>
                     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                         {OthersProduts.map((data) =>
-                            <View style={{
-                                backgroundColor: AZUL, width: 210, height: 100, borderRadius: SPACING * 2,
-                                marginTop: SPACING * 2, marginLeft: SPACING * 2, padding: SPACING,
-                                flexDirection: 'row', alignItems: 'center'
-                            }}>
-                                <Image source={data.Image} />
-                                <View style={{ marginLeft: SPACING }}>
-                                    <Text style={{ fontWeight: 'bold', color: PRIMARY }}>{data.name}</Text>
-                                    <Text style={{ fontWeight: 'bold', color: GRAY }}>{data.description}</Text>
+                            <TouchableOpacity key={data.id} onPress={() => navigation.navigate('Product', data)}>
+                                <View style={{
+                                    backgroundColor: data.color, width: 210, height: 100, borderRadius: SPACING * 2,
+                                    marginTop: SPACING * 2, marginLeft: SPACING * 2, padding: SPACING,
+                                    flexDirection: 'row', alignItems: 'center', color: LIGHT,
+                                }
+                                }>
+
+                                    <Image source={data.Image} />
+                                    <View style={{ marginLeft: SPACING }}>
+                                        <Text style={{ fontWeight: 'bold', color: PRIMARY }}>{data.name}</Text>
+                                        <Text style={{ fontWeight: 'bold', color: GRAY, fontSize: SPACING * 2 }}>{data.description}</Text>
+                                        <Text style={{ fontWeight: 'bold', color: PRIMARY }}>{data.prince}MZN</Text>
+                                    </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         )}
                     </ScrollView>
                 </View>
