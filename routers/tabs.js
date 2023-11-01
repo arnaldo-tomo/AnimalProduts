@@ -36,6 +36,8 @@ export default function TabsNv() {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarShowLabel: false,
+                tabBarIconStyle:  {},
+                // tabBarLabelPosition: 'beside-icon',
                 tabBarStyle: { backgroundColor: LIGHT, elevation: 0, borderColor: LIGHT },
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
