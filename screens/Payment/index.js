@@ -17,7 +17,10 @@ export const Payment = ({ navigation, route }) => {
         <SafeAreaView>
             <ScrollView style={{ backgroundColor: LIGHT, height: height, width: width }}>
 
-                <View style={{ marginTop: SPACING * 10, justifyContent: 'space-between', flexDirection: 'row', marginLeft: SPACING * 3, marginRight: SPACING * 3, alignItems: 'center', alignContent: 'center' }}>
+                <View style={{
+                    marginTop: SPACING * 10, justifyContent: 'space-between',
+                    flexDirection: 'row', marginLeft: SPACING * 3, marginRight: SPACING * 3, alignItems: 'center', alignContent: 'center'
+                }}>
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <Ionicons name="arrow-back" size={SPACING * 5} style={{ color: PRIMARY, marginLeft: SPACING }} />
@@ -38,19 +41,19 @@ export const Payment = ({ navigation, route }) => {
                         <Ionicons name="chevron-up-outline" size={SPACING * 5} style={{ color: PRIMARY, marginLeft: SPACING }} />
                     </View>
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Quantity unit</Text>
                         <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}> {quantidade}</Text>
                     </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Items unit</Text>
                         <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}>Mt. {PorUnidade}.00</Text>
                     </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Discount</Text>
                         <Text style={{ color: ROSA, fontSize: SPACING * 3, fontweight: 'bold' }}>-Mt. 40.00</Text>
                     </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Delivery Charges</Text>
                         <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}>-Mt. 49.00</Text>
                     </View>
@@ -72,7 +75,7 @@ export const Payment = ({ navigation, route }) => {
                                 <Image source={payment.Image} style={{ width: 40, height: 40, resizeMode: "cover", borderRadius: SPACING }} />
                                 <View style={{ marginLeft: SPACING * 2 }}>
                                     <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontWeight: 'bold' }}>{payment.name}</Text>
-                                    <Text style={{ color: ROSA }}>Taxa a pagar: {payment.prince} mt</Text>
+                                    <Text style={{ color: ROSA }}>Taxa {payment.prince}.00 mt</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
