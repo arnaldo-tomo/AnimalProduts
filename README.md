@@ -1,0 +1,1 @@
+# O AnimalProduts é um aplicativo de compras conveniente e abrangente projetado para atender às necessidades de proprietários de animais de estimação. Este aplicativo oferece uma ampla variedade de alimentos para animais de alta qualidade, acessórios e produtos relacionados para cães, gatos, pássaros, peixes e outros animais de estimação.
