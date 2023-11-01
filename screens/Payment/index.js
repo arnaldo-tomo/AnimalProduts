@@ -21,34 +21,47 @@ export const Payment = ({ navigation, route }) => {
                     <TouchableOpacity onPress={() => navigation.goBack()}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <Ionicons name="arrow-back" size={SPACING * 5} style={{ color: PRIMARY, marginLeft: SPACING }} />
-                            <Text style={{ color: PRIMARY, fontWeight: '500', fontSize: SPACING * 5, marginLeft: SPACING * 2 }}>Payment</Text>
+                            <Text style={{ color: PRIMARY, fontWeight: '400', fontSize: SPACING * 5, marginLeft: SPACING * 2 }}>Payment</Text>
                         </View>
                     </TouchableOpacity>
-                    <Image source={user.profile} style={{ width: 40, height: 40, borderRadius: SPACING * 2 }} />
+                    {/* <Image source={user.profile} style={{ width: 40, height: 40, borderRadius: SPACING * 2 }} /> */}
                 </View>
+                <View style={{ backgroundColor: 'gray', height: 0.5, marginTop: SPACING * 2 }}></View>
                 <View style={{
-                    marginTop: 30,
+                    marginTop: 5,
                     backgroundColor: LIGHT, padding: SPACING,
                     width: 350, height: 200, marginLeft: SPACING * 2,
-                    borderRadius: SPACING * 2, elevation: 2
-                }}>
-                    <Text style={{ color: PRIMARY, fontSize: SPACING * 5, marginBottom: SPACING, }}>Payment  infomation</Text>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: SPACING }}>
 
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Text style={{ color: PRIMARY, fontSize: SPACING * 5 }}> Unidade: {PorUnidade}</Text>
-                        </View>
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <Text style={{ color: PRIMARY, fontSize: SPACING * 5 }}> Qunat: {quantidade}</Text>
-                        </View>
+                }}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 4, marginBottom: SPACING, fontWeight: 'bold' }}>Price Details</Text>
+                        <Ionicons name="chevron-up-outline" size={SPACING * 5} style={{ color: PRIMARY, marginLeft: SPACING }} />
                     </View>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Text style={{ color: PRIMARY, fontSize: SPACING * 5 }}> Total:{valorTotal}</Text>
+
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                        <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Quantity unit</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}> {quantidade}</Text>
                     </View>
-                    <View>
-                        <Text style={{ color: PRIMARY, fontSize: SPACING * 5, }}>Description</Text>
-                        <Text style={{ color: PRIMARY }}>{descrip}</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                        <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Items unit</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}>Mt. {PorUnidade}.00</Text>
                     </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                        <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Discount</Text>
+                        <Text style={{ color: ROSA, fontSize: SPACING * 3, fontweight: 'bold' }}>-Mt. 40.00</Text>
+                    </View>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, }}>
+                        <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Delivery Charges</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}>-Mt. 49.00</Text>
+                    </View>
+                    <View style={{ backgroundColor: 'gray', height: 0.5, marginTop: SPACING * 2 }}></View>
+
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 5 }}>Total Payable</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 5 }}>Mt.{valorTotal}.00</Text>
+                    </View>
+
+
                 </View>
                 <View style={{ marginLeft: SPACING * 2, marginTop: SPACING * 3, backgroundColor: LIGHT }}>
                     <Text style={{ color: PRIMARY, fontSize: SPACING * 5, marginBottom: SPACING, }}>Payment Method</Text>
