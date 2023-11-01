@@ -1,12 +1,13 @@
 import { Dimensions, Image, ImageBackground, SafeAreaView, StatusBar, Text, View } from "react-native"
-import { GRAY, LIGHT, PRIMARY, SPACING, imagOneboard } from "../../configs"
+import { GRAY, LIGHT, PRIMARY, ROSA, SPACING, imagOneboard } from "../../configs"
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 const { width, height } = Dimensions.get('screen');
 export const Oneboarding = ({ navigation }) => {
     return (
-        <SafeAreaView>
-            <View>
+        <SafeAreaView style={{ backgroundColor: LIGHT, flex: 1 }} >
+            <StatusBar animated showHideTransition={'fade'} translucent backgroundColor={LIGHT} barStyle={"dark-content"} />
+            <View >
                 <ImageBackground source={imagOneboard}
                     style={{
                         width: 300, height: 350,
