@@ -30,7 +30,7 @@ export const Payment = ({ navigation, route }) => {
                 <View style={{
                     marginTop: 5,
                     backgroundColor: LIGHT, padding: SPACING,
-                    width: 350, height: 200, marginLeft: SPACING * 2,
+                    width: 350, height: 210, marginLeft: SPACING * 2,
 
                 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
@@ -54,37 +54,40 @@ export const Payment = ({ navigation, route }) => {
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Delivery Charges</Text>
                         <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}>-Mt. 49.00</Text>
                     </View>
-                    <View style={{ backgroundColor: 'gray', height: 0.5, marginTop: SPACING * 2 }}></View>
+                    <View style={{ backgroundColor: 'gray', height: 1, marginTop: SPACING * 4, marginBottom: SPACING * 4 }}></View>
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Text style={{ color: PRIMARY, fontSize: SPACING * 5 }}>Total Payable</Text>
-                        <Text style={{ color: PRIMARY, fontSize: SPACING * 5 }}>Mt.{valorTotal}.00</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingBottom: SPACING * 2 }}>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 4, marginBottom: SPACING, fontWeight: 'bold' }}>Total Payable</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 4, marginBottom: SPACING, fontWeight: 'bold' }}>Mt.{valorTotal}.00</Text>
                     </View>
-
-
                 </View>
-                <View style={{ marginLeft: SPACING * 2, marginTop: SPACING * 3, backgroundColor: LIGHT }}>
-                    <Text style={{ color: PRIMARY, fontSize: SPACING * 5, marginBottom: SPACING, }}>Payment Method</Text>
-                    {PaymentMZ.map((payment) =>
-                        <TouchableOpacity key={payment.id} onPress={() => { setShow(true); setNome(payment.name); }} style={{ backgroundColor: LIGHT, elevation: 1, width: 350, height: 100, borderRadius: SPACING * 2, padding: SPACING, marginBottom: SPACING * 2 }}>
-                            <View style={{ flexDirection: 'row', alignItems: 'center', padding: SPACING }}>
-                                <Image source={payment.Image} style={{ width: 100, height: 80, resizeMode: "cover", borderRadius: SPACING }} />
+                <View style={{ backgroundColor: '#EAE6E3', height: 10, marginTop: SPACING * 4, marginBottom: SPACING * 4 }}></View>
 
+                <View style={{ marginLeft: SPACING * 2, marginTop: SPACING, backgroundColor: LIGHT }}>
+                    <Text style={{ color: PRIMARY, fontSize: SPACING * 4, marginBottom: SPACING * 3, fontWeight: 'bold' }}>Payment options</Text>
+                    {PaymentMZ.map((payment) =>
+                        <TouchableOpacity key={payment.id} onPress={() => { setShow(true); setNome(payment.name); }}
+                            style={{ backgroundColor: LIGHT, elevation: 1, width: 350, height: 60, borderRadius: SPACING, padding: SPACING, marginBottom: SPACING * 2 }}>
+                            <View style={{ flexDirection: 'row', alignItems: 'center', padding: SPACING }}>
+                                <Image source={payment.Image} style={{ width: 40, height: 40, resizeMode: "cover", borderRadius: SPACING }} />
                                 <View style={{ marginLeft: SPACING * 2 }}>
-                                    <Text style={{ color: PRIMARY, fontSize: SPACING * 4, fontWeight: 'bold' }}>{payment.name}</Text>
-                                    <Text style={{ color: GRAY, fontSize: SPACING * 3 }}>Taxa a pagar: {payment.prince} mt</Text>
+                                    <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontWeight: 'bold' }}>{payment.name}</Text>
+                                    <Text style={{ color: ROSA }}>Taxa a pagar: {payment.prince} mt</Text>
                                 </View>
                             </View>
                         </TouchableOpacity>
+
                     )}
+                    {/* <View style={{ backgroundColor: 'gray', height: 1, marginTop: SPACING * 4, marginBottom: SPACING * 4 }}></View> */}
+
                 </View>
 
                 {
                     show == true &&
                     <>
                         <View View style={{
-                            width: 370, height: 250, backgroundColor: LIGHT, elevation: 10, bottom: 161,
-                            borderTopLeftRadius: SPACING * 5, borderTopRightRadius: SPACING * 5, padding: SPACING * 5,
+                            width: 370, height: 250, backgroundColor: LIGHT, elevation: 10, bottom: 0,
+                            borderTopLeftRadius: SPACING * 5, borderTopRightRadius: SPACING * 5, padding: SPACING * 5, position: 'absolute'
                         }}>
                             <TouchableOpacity onPress={() => setShow(false)}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', alignContent: 'center', alignSelf: 'center' }}>
@@ -106,11 +109,11 @@ export const Payment = ({ navigation, route }) => {
                             </View>
                             <TouchableOpacity onPress={() => paynow()}
                                 style={{
-                                    backgroundColor: PRIMARY, width: 340,
+                                    backgroundColor: ROSA, width: 340,
                                     height: 50, padding: SPACING, borderRadius: SPACING * 3,
-                                    alignSelf: 'center', alignItems: 'center', alignContent: 'center', bottom: SPACING * 5, position: 'absolute',
+                                    alignSelf: 'center', alignItems: 'center', alignContent: 'center', bottom: 0, position: 'absolute',
                                 }}>
-                                <Text style={{ fontSize: 20, color: LIGHT, padding: SPACING * 2 }}> Procced to Checkout
+                                <Text style={{ fontSize: 20, color: PRIMARY, padding: SPACING * 2, fontWeight: 'bold' }}> Procced to Checkout
                                     <Ionicons name="chevron-forward" size={20} />
                                 </Text>
                             </TouchableOpacity>
