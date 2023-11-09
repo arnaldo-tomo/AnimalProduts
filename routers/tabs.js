@@ -1,19 +1,31 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from '../screens/home';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { GRAY, LIGHT, PRIMARY } from '../configs';
+import MapView from 'react-native-maps';
+import { Search } from '../screens/search';
 
 
 function PaperNews() {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>paperNews!</Text>
+        <View style={styles.container}>
+            <MapView style={styles.map} />
         </View>
     );
+
 }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    map: {
+        width: '100%',
+        height: '100%',
+    },
+});
 function Account() {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -36,7 +48,7 @@ export default function TabsNv() {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarShowLabel: false,
-                tabBarIconStyle:  {},
+                tabBarIconStyle: {},
                 // tabBarLabelPosition: 'beside-icon',
                 tabBarStyle: { backgroundColor: LIGHT, elevation: 0, borderColor: LIGHT },
                 tabBarIcon: ({ focused, color, size }) => {
@@ -46,8 +58,8 @@ export default function TabsNv() {
                         iconName = focused ? 'grid' : 'ios-grid-outline';
                     }
 
-                    if (route.name === 'PaperNews') {
-                        iconName = focused ? 'newspaper' : 'newspaper-outline';
+                    if (route.name === 'Search') {
+                        iconName = focused ? 'search' : 'search-outline';
                     }
                     if (route.name === 'Account') {
                         iconName = focused ? 'person' : 'person-outline';
@@ -63,7 +75,7 @@ export default function TabsNv() {
             })}
         >
             <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
-            <Tab.Screen name="PaperNews" component={PaperNews} />
+            <Tab.Screen name="Search" component={Search} options={{ headerShown: false }} />
             <Tab.Screen name="Account" component={Account} />
             <Tab.Screen name="Menu" component={Menu} />
         </Tab.Navigator >
