@@ -1,3 +1,5 @@
+import { Dimensions } from 'react-native';
+
 export const PRIMARY = "#2B2C40";
 export const GRAY = "#667C8A";
 export const ROSA = "#E7A491";
@@ -14,3 +16,5 @@ export const mpesalogo = require('../assets/imgs/mpesalogo.png');
 export const imagOneboard = require('../assets/imgs/image1.png');
 export const IconHome = require('../assets/icon/ic_round-dashboard.png');
 export const IconGroup = require('../assets/icon/Group.png');
+
+export const { width, height } = Dimensions.get('screen');
