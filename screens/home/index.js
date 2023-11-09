@@ -20,13 +20,15 @@ export const Home = ({ navigation }) => {
                 <StatusBar style='dark' />
                 <View style={{ paddingHorizontal: SPACING * 5, paddingTop: SPACING * 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
                     <Image source={IconGroup} />
-                    <TouchableOpacity >
+                    <TouchableOpacity onPress={() => navigation.navigate('Account')} >
                         <Image source={user.profile} style={{ width: 50, height: 50, borderRadius: SPACING * 3 }} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ width: 240, marginLeft: SPACING * 5, marginTop: SPACING * 5 }}>
-                    <Text style={{ color: PRIMARY, fontWeight: 'bold', fontSize: SPACING * 5 }}>Find the best product for your pet</Text>
-                </View>
+                <TouchableOpacity onPress={() => navigation.navigate('Search')}>
+                    <View style={{ width: 240, marginLeft: SPACING * 5, marginTop: SPACING * 5 }}>
+                        <Text style={{ color: PRIMARY, fontWeight: 'bold', fontSize: SPACING * 5 }}>Find the best product for your pet</Text>
+                    </View>
+                </TouchableOpacity>
 
                 <View style={{ flexDirection: 'row', marginLeft: SPACING * 5, paddingTop: SPACING * 7 }}>
                     {AnimalCategory.map((data) =>
@@ -48,7 +50,7 @@ export const Home = ({ navigation }) => {
                                     data.id == 1 && { width: 175, height: 270, backgroundColor: ROSA, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
                                     data.id == 2 && { width: 175, height: 270, backgroundColor: PRIMARY, borderRadius: SPACING * 2, padding: SPACING, alignItems: 'center', justifyContent: 'center' },
 
-                                ]}>
+                                    ]}>
                                     <Image source={data.Image} style={{ width: 150, height: 150 }} />
                                     <Text style={[{ color: PRIMARY, fontWeight: '800', },
                                     data.id == 0 && { color: ROSA, fontWeight: '800', },
