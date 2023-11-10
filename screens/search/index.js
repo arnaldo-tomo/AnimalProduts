@@ -10,7 +10,7 @@ import { AnimalCategory, produts } from "../../data"
 import { ScrollView } from "react-native"
 
 
-export const Search = () => {
+export const Search = ({ navigation }) => {
     const [busca, setBusca] = useState('');
     const [activeCategria, setActiveCategria] = useState(1);
     const pesquisado = produts.filter((data) => data.name.toLowerCase().includes(busca.toLowerCase()))
@@ -48,13 +48,14 @@ export const Search = () => {
                 )}
             </View>
             {pesquisado.map((data) =>
+
                 <TouchableOpacity key={data.id} style={{
                     padding: SPACING * 2,
                     borderRadius: SPACING, marginTop: SPACING, backgroundColor:
                         LIGHT, width: width - 18, height: 120, elevation: 2,
                     marginLeft: SPACING * 2, marginRight: SPACING * 2,
                     flexDirection: 'row'
-                }} >
+                }} onPress={() => navigation.navigate('Product', data)}>
 
                     <View>
                         <Image source={data.Image} style={{ width: 100, height: 100 }} />
