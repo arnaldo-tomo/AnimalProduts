@@ -5,9 +5,12 @@ import { TextInput } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
 import { TouchableOpacity } from "react-native"
 import { Image } from "react-native"
+import { useState } from "react"
 
 
 export const Search = () => {
+
+    const [busca, setBusca] = useState('');
     return (
         <SafeAreaView style={{ backgroundColor: LIGHT, flex: 1 }}>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, padding: 15, }}>
@@ -23,9 +26,11 @@ export const Search = () => {
                 <TouchableOpacity style={{ backgroundColor: PRIMARY }}>
                     <Ionicons name="search" color={LIGHT} size={20} />
                 </TouchableOpacity>
-                <TextInput placeholder="Find the best product for your pet" placeholderTextColor={LIGHT} />
+                <TextInput onChange={(st) => setBusca(st.target.value)} placeholder="Find the best product for your pet" placeholderTextColor={LIGHT} />
                 <Ionicons name="filter" color={LIGHT} size={20} />
             </View>
-        </SafeAreaView >
+
+            <Text>{busca}</Text>
+        </SafeAreaView>
     )
 }
