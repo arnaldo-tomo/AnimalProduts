@@ -26,11 +26,13 @@ export const Search = () => {
                 <TouchableOpacity style={{ backgroundColor: PRIMARY }}>
                     <Ionicons name="search" color={LIGHT} size={20} />
                 </TouchableOpacity>
-                <TextInput onChange={(st) => setBusca(st.target.value)} placeholder="Find the best product for your pet" placeholderTextColor={LIGHT} />
+                <TextInput value={busca}  onChangeText={(text) => setBusca(text)} placeholder="Find the best product for your pet" placeholderTextColor={LIGHT} />
+
                 <Ionicons name="filter" color={LIGHT} size={20} />
             </View>
-
-            <Text>{busca}</Text>
+            <View style={{ justifyContent: 'center' }}>
+                <Text>Resulatdo:{busca}</Text>
+            </View>
         </SafeAreaView>
     )
 }
