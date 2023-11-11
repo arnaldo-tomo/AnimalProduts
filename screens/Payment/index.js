@@ -14,8 +14,8 @@ export const Payment = ({ navigation, route }) => {
         console.log("MOSA");
     }
     return (
-        <SafeAreaView>
-            <ScrollView style={{ backgroundColor: LIGHT, height: height, width: width }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: LIGHT, height: height, width: width }}>
+            <ScrollView>
 
                 <View style={{
                     marginTop: SPACING * 10, justifyContent: 'space-between',
@@ -31,9 +31,9 @@ export const Payment = ({ navigation, route }) => {
                 </View>
                 <View style={{ backgroundColor: 'gray', height: 0.5, marginTop: SPACING * 2 }}></View>
                 <View style={{
-                    marginTop: 5,
+                    marginTop: 5, marginBottom: SPACING * 4,
                     backgroundColor: LIGHT, padding: SPACING,
-                    width: 350, height: 210, marginLeft: SPACING * 2,
+                    width: '100%',
 
                 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
@@ -64,13 +64,12 @@ export const Payment = ({ navigation, route }) => {
                         <Text style={{ color: PRIMARY, fontSize: SPACING * 4, marginBottom: SPACING, fontWeight: 'bold' }}>Mt.{valorTotal}.00</Text>
                     </View>
                 </View>
-                <View style={{ backgroundColor: '#EAE6E3', height: 10, marginTop: SPACING * 4, marginBottom: SPACING * 4 }}></View>
 
-                <View style={{ marginLeft: SPACING * 2, marginTop: SPACING, backgroundColor: LIGHT }}>
+                <View style={{ width: '100%', marginTop: SPACING * 4, backgroundColor: LIGHT, padding: SPACING * 2 }}>
                     <Text style={{ color: PRIMARY, fontSize: SPACING * 4, marginBottom: SPACING * 3, fontWeight: 'bold' }}>Payment options</Text>
                     {PaymentMZ.map((payment) =>
                         <TouchableOpacity key={payment.id} onPress={() => { setShow(true); setNome(payment.name); }}
-                            style={{ backgroundColor: LIGHT, elevation: 1, width: 350, height: 60, borderRadius: SPACING, padding: SPACING, marginBottom: SPACING * 2 }}>
+                            style={{ backgroundColor: LIGHT, elevation: 1, width: '100%', height: 60, borderRadius: SPACING, padding: SPACING, marginBottom: SPACING * 2 }}>
                             <View style={{ flexDirection: 'row', alignItems: 'center', padding: SPACING }}>
                                 <Image source={payment.Image} style={{ width: 40, height: 40, resizeMode: "cover", borderRadius: SPACING }} />
                                 <View style={{ marginLeft: SPACING * 2 }}>
@@ -89,8 +88,8 @@ export const Payment = ({ navigation, route }) => {
                     show == true &&
                     <>
                         <View View style={{
-                            width: 370, height: 250, backgroundColor: LIGHT, elevation: 10, bottom: 0,
-                            borderTopLeftRadius: SPACING * 5, borderTopRightRadius: SPACING * 5, padding: SPACING * 5, position: 'absolute'
+                            width: '100%', height: 350, backgroundColor: PRIMARY, elevation: 10,
+                            borderTopLeftRadius: SPACING * 5, borderTopRightRadius: SPACING * 5, padding: SPACING * 5,
                         }}>
                             <TouchableOpacity onPress={() => setShow(false)}>
                                 <View style={{ flexDirection: 'row', alignItems: 'center', alignContent: 'center', alignSelf: 'center' }}>
@@ -99,7 +98,7 @@ export const Payment = ({ navigation, route }) => {
                                 </View>
                             </TouchableOpacity>
                             <View>
-                                <Text style={{ fontWeight: 'bold', marginBottom: SPACING }}> Informe o numero do {nome}</Text>
+                                <Text style={{ fontWeight: 'bold', marginBottom: SPACING, color: LIGHT }}> Informe o numero do {nome}</Text>
                                 <TextInput
                                     style={{ backgroundColor: 'gray', height: 50, borderRadius: SPACING * 2, padding: SPACING, color: LIGHT }}
                                     onChangeText={onChangeNumber}
@@ -112,13 +111,14 @@ export const Payment = ({ navigation, route }) => {
                             </View>
                             <TouchableOpacity onPress={() => paynow()}
                                 style={{
-                                    backgroundColor: ROSA, width: 340,
+                                    backgroundColor: ROSA, width: 350,
                                     height: 50, padding: SPACING, borderRadius: SPACING * 3,
-                                    alignSelf: 'center', alignItems: 'center', alignContent: 'center', bottom: 0, position: 'absolute',
+                                    alignContent: 'center', marginTop: SPACING * 2,
+                                    justifyContent: 'center', alignContent: 'center', alignItems: 'center', flexDirection: 'row'
                                 }}>
-                                <Text style={{ fontSize: 20, color: PRIMARY, padding: SPACING * 2, fontWeight: 'bold' }}> Procced to Checkout
-                                    <Ionicons name="chevron-forward" size={20} />
+                                <Text style={{ fontSize: 15, color: PRIMARY, padding: SPACING * 2, fontWeight: 'bold', }}> Procced to Checkout
                                 </Text>
+                                <Ionicons name="chevron-forward" size={20} />
                             </TouchableOpacity>
                         </View>
                     </>
