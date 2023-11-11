@@ -12,7 +12,7 @@ import { ScrollView } from "react-native"
 
 export const Search = ({ navigation }) => {
     const [busca, setBusca] = useState('');
-    const [buscaCatehory, setBuscaCatehory] = useState(0);
+    const [buscaCatehory, setBuscaCatehory] = useState('');
     const [activeCategria, setActiveCategria] = useState(0);
     const pesquisado = produts.filter((data) => data.name.toLowerCase().includes(busca.toLowerCase()) && data.AnimalCategoryId.toString().includes(buscaCatehory.toString()))
     return (
