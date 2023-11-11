@@ -76,7 +76,7 @@ export const Search = ({ navigation }) => {
                                     </View>
                                     <View>
                                         <Text style={{ fontWeight: 'bold' }}>{data.name}</Text>
-                                        <Text style={{ color: GRAY, width: 240, fontWeight: 'normal' }}>{data.description}</Text>
+                                        <Text style={{ color: GRAY, width: 260, fontWeight: 'normal', height: 50, }}>{data.description}</Text>
                                         <Text style={{ fontWeight: 'bold', color: GRAY }}>{data.price}.00MZN</Text>
                                     </View>
                                 </TouchableOpacity>
