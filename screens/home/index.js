@@ -19,7 +19,9 @@ export const Home = ({ navigation }) => {
             <SafeAreaView>
                 <StatusBar style='dark' />
                 <View style={{ paddingHorizontal: SPACING * 5, paddingTop: SPACING * 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} >
-                    <Image source={IconGroup} />
+                    <TouchableOpacity >
+                        <Image source={IconGroup} />
+                    </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Account')} >
                         <Image source={user.profile} style={{ width: 50, height: 50, borderRadius: SPACING * 3 }} />
                     </TouchableOpacity>
