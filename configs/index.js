@@ -11,6 +11,7 @@ export const user = {
     name: "Arnaldo Tomo",
     profile: require('../assets/imgs/Main.png'),
     notFOund: require('../assets/imgs/confirmation.png'),
+    Bgprofile: require('../assets/imgs/bgprofile.jpg'),
 };
 
 export const mpesalogo = require('../assets/imgs/mpesalogo.png');
