@@ -13,7 +13,7 @@ export const Oneboarding = ({ navigation }) => {
                         width: 300, height: 350,
                         alignContent: 'center',
                         alignSelf: 'center', marginTop: SPACING * 10
-                    }} >
+                    }} > 
 
                 </ImageBackground>
                 <View>
