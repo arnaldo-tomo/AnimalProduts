@@ -49,8 +49,9 @@ export default function TabsNv() {
             screenOptions={({ route }) => ({
                 tabBarShowLabel: false,
                 tabBarIconStyle: {},
+                tabBarHideOnKeyboard: true,
                 // tabBarLabelPosition: 'beside-icon',
-                tabBarStyle: { backgroundColor: LIGHT, elevation: 0, borderColor: LIGHT },
+                tabBarStyle: { backgroundColor: LIGHT, elevation: 0, borderColor: LIGHT, osition: 'absolute' },
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName;
 
