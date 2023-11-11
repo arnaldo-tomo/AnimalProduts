@@ -10,6 +10,7 @@ export const SPACING = 5;
 export const user = {
     name: "Arnaldo Tomo",
     profile: require('../assets/imgs/Main.png'),
+    notFOund: require('../assets/imgs/confirmation.png'),
 };
 
 export const mpesalogo = require('../assets/imgs/mpesalogo.png');
