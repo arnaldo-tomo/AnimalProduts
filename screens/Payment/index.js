@@ -43,19 +43,19 @@ export const Payment = ({ navigation, route }) => {
 
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Quantity unit</Text>
-                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}> {quantidade}</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontWeight: 'bold' }}> {quantidade}</Text>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Items unit</Text>
-                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}>Mt. {PorUnidade}.00</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontWeight: 'bold' }}>Mt. {PorUnidade}.00</Text>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Discount</Text>
-                        <Text style={{ color: ROSA, fontSize: SPACING * 3, fontweight: 'bold' }}>-Mt. 40.00</Text>
+                        <Text style={{ color: ROSA, fontSize: SPACING * 3, fontWeight: 'bold' }}>-Mt. 40.00</Text>
                     </View>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
                         <Text style={{ color: 'gray', fontSize: SPACING * 4 }}>Delivery Charges</Text>
-                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontweight: 'bold' }}>-Mt. 49.00</Text>
+                        <Text style={{ color: PRIMARY, fontSize: SPACING * 3, fontWeight: 'bold' }}>-Mt. 49.00</Text>
                     </View>
                     <View style={{ backgroundColor: 'gray', height: 1, marginTop: SPACING * 4, marginBottom: SPACING * 4 }}></View>
 
