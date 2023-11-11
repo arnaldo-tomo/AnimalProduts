@@ -4,6 +4,7 @@ export const produts =
     [
         {
             id: 1,
+            AnimalCategoryId: 1,
             name: "Cachorro-quente",
             Image: require('../assets/imgs/comida.png'),
             price: 1200,
@@ -12,6 +13,7 @@ export const produts =
             description: "Um pãozinho recheado com uma salsicha, geralmente acompanhado de molho de tomate, mostarda, ketchup, cebola, e outras coberturas.",
         }, {
             id: 2,
+            AnimalCategoryId: 1,
             name: "Hambúrguer",
             Image: require('../assets/imgs/Rectangle5.png'),
             price: 500,
@@ -20,6 +22,7 @@ export const produts =
             description: "Carne moída grelhada ou frita, geralmente servida dentro de um pão com diversos acompanhamentos, como alface, tomate, queijo, e molhos.",
         }, {
             id: 3,
+            AnimalCategoryId: 2,
             name: "Peixe e batatas fritas",
             Image: require('../assets/imgs/comida1.png'),
             price: 200,
@@ -29,6 +32,7 @@ export const produts =
         }
         , {
             id: 4,
+            AnimalCategoryId: 5,
             name: "Peixe fritas",
             Image: require('../assets/imgs/comida2.png'),
             price: 700,
