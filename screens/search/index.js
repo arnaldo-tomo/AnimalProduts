@@ -12,7 +12,7 @@ import { ScrollView } from "react-native"
 
 export const Search = ({ navigation }) => {
     const [busca, setBusca] = useState('');
-    const [activeCategria, setActiveCategria] = useState(1);
+    const [activeCategria, setActiveCategria] = useState(0);
     const pesquisado = produts.filter((data) => data.name.toLowerCase().includes(busca.toLowerCase()))
     return (
         <SafeAreaView style={{ backgroundColor: LIGHT, flex: 1., bottom: 'auto' }}>
@@ -44,6 +44,10 @@ export const Search = ({ navigation }) => {
                     </TouchableOpacity>
                 </View>
                 <View style={{ flexDirection: 'row', marginLeft: SPACING * 5, paddingTop: SPACING * 7 }}>
+                    <TouchableOpacity onPress={() => setActiveCategria(0)} style={{ marginRight: SPACING * 4 }} >
+                        <Text style={[activeCategria == 0 ? { fontWeight: 'bold', color: PRIMARY } : { fontWeight: 'bold', color: GRAY }]}>All</Text>
+                        <Text style={[activeCategria == 0 && { backgroundColor: ROSA, height: 5, borderRadius: SPACING }]}></Text>
+                    </TouchableOpacity>
                     {AnimalCategory.map((data) =>
                         <ScrollView key={data.id} horizontal>
                             <TouchableOpacity key={data.id} onPress={() => setActiveCategria(data.id)} >
@@ -75,6 +79,6 @@ export const Search = ({ navigation }) => {
                     )}
                 </ScrollView>
             </View>
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
