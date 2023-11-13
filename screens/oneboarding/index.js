@@ -7,19 +7,19 @@ export const Oneboarding = ({ navigation }) => {
     return (
         <SafeAreaView style={{ backgroundColor: LIGHT, flex: 1 }} >
             <StatusBar animated showHideTransition={'fade'} translucent backgroundColor={LIGHT} barStyle={"dark-content"} />
-            <View >
-                <ImageBackground source={imagOneboard}
-                    style={{
-                        width: 300, height: 350,
-                        alignContent: 'center',
-                        alignSelf: 'center', marginTop: SPACING * 10
-                    }} > 
+            <ImageBackground source={imagOneboard}
+                style={{
+                    width: 200, height: 300,
+                    alignContent: 'center',
+                    alignSelf: 'center', marginTop: SPACING * 10,
+                }} >
+            </ImageBackground>
+            <View style={{ position: 'absolute', bottom: SPACING }}>
 
-                </ImageBackground>
                 <View>
                     <Text style={{
-                        fontWeight: 'bold', fontSize: SPACING * 6, width: 260,
-                        padding: SPACING, marginLeft: SPACING, marginTop: SPACING * 10, color: PRIMARY
+                        fontWeight: 'bold', fontSize: SPACING * 6, width: width,
+                        padding: SPACING, marginLeft: SPACING, color: PRIMARY
                     }}>We deliver pet products worldwide</Text>
                     <Text style={{
                         fontWeight: '400', fontSize: 17,
