@@ -5,7 +5,9 @@ pt: Clone ou baixe o projecto pro seu computador e depois corra o seguinte coman
 
 down a link for a server side project <a href="https://github.com/arnaldo-tomo/AnimalProduts">Here</a>
 
-Es o link para o projecto da parte do servidor <a href="https://github.com/arnaldo-tomo/AnimalProduts">Here</a>
+open the URL for download APK. <a href="https://expo.dev/artifacts/eas/DJM4tPEK53U9Lkn9i28Az.apk">Here</a>
+
+open the URL below to install it on a device. <a href="https://expo.dev//accounts/arnaldotomo/projects/AnimalProduts/builds/0544e1b6-6083-4721-b295-edf057df8fc9">Here</a>
 
 <img src="Screenshot/Screenshot_20231113-161251_Animal.jpg" width="160">  <img src="Screenshot/Screenshot_20231113-161254_Animal.jpg" width="160">  <img src="Screenshot/Screenshot_20231113-161256_Animal.jpg" width="160">
 
